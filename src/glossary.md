@@ -22,7 +22,7 @@ The relative power of an [agent](#agent) to participate in their world.
 
 1. Anything with [agency](#agency), such as a human or bot.
 
-2. An agent (definition 1) who participates in a Holochain [#network](#network) through their [#DNA instance](#dna-instance).
+2. An agent (definition 1) who participates in a Holochain [network](#network) through their [DNA instance](#dna-instance).
 
 3. The [public/private key pair](#public-key-cryptography) that represents an agent (definition 2).
 
@@ -44,9 +44,7 @@ Describes any data structure that can only be written to. Once written, data is 
 
 #### Application (app)
 
-1. A collection of [back end](#back-end) and [front end](#front-end) components that comprise something a person can use.
-
-2. Synonymous with [hApp](#holochain-application-happ).
+Synonymous with [hApp](#holochain-application-happ).
 
 #### Aspect
 
@@ -62,7 +60,7 @@ Synonymous with a collection of [DNA instances](#dna-instance) for a [hApp](#hol
 
 #### Blockchain
 
-A distributed system that promises [Byzantine fault tolerance](#byzantine-fault-tolerance-bft) by using a [coordination protocol](#coordination-protocol) to get all nodes to agree on a single, shared history of events. This history is stored as a [hash chain](#hash-chain) of 'blocks', or bundles of [state changes](#state-change). A blockchain can be public (anyone can join) or permissioned/private (membership is controlled). Public blockchains are usually [trustless](#trustless), ensuring tamper-resistance by making cheating more costly than honesty.
+A distributed system that promises [Byzantine fault tolerance](#byzantine-fault-tolerance-bft) by using a [coordination protocol](#coordination-protocol) to get all nodes to agree on a single, shared history of events. This history is stored as a [hash chain](#hash-chain) of 'blocks', or bundles of [state transitions](#state-transition). A blockchain can be public (anyone can join) or permissioned/private (membership is controlled). Public blockchains are usually [trustless](#trustless), ensuring tamper-resistance by making cheating more costly than honesty.
 
 #### Bridge
 
@@ -154,7 +152,7 @@ Any storage system that gives a unique ID to each piece of data and allows it to
 
 #### Coordination protocol
 
-An algorithm that governs the synchronization of data in a [distributed system](#distributed-system). It aims to prevent or resolve data conflicts that happen when two [nodes](#node) are out of sync with each other. Any [state change](#state-change) that isn't [logically monotonic](#logical-monotonicity) needs a coordination protocol.
+An algorithm that governs the synchronization of data in a [distributed system](#distributed-system). It aims to prevent or resolve data conflicts that happen when two [nodes](#node) are out of sync with each other. Any [state transition](#state-transition) that isn't [logically monotonic](#logical-monotonicity) needs a coordination protocol.
 
 #### Core API
 
@@ -186,7 +184,7 @@ A collection of data stored collectively by many [nodes](#node) in a [distribute
 
 #### Distributed ledger technology (DLT)
 
-Any technology that involves many [nodes](#node) in a distributed system sharing an [append-only](#append-only) history of [state changes](#state-change). In Holochain, each [agent](#agent) stores their own history in their [source chain](#source-chain) and shares copies of it with [peers](#peer).
+Any technology that involves many [nodes](#node) in a distributed system sharing an [append-only](#append-only) history of [state transitions](#state-transition). In Holochain, each [agent](#agent) stores their own history in their [source chain](#source-chain) and shares copies of it with [peers](#peer).
 
 #### Distributed public key infrastructure (DPKI)
 
@@ -218,7 +216,7 @@ A specific sort of entry that a [DNA](#dna) recognizes and understands. Like an 
 
 #### Eventual consistency
 
-Describes a promise made by distributed systems that optimize for availability over consistency (see [CAP theorem](#consistency-availability-partition-tolerance-cap-theorem)), meaning that given enough time, every [node](#node) ought to eventually reach [consistency](#consistency) with each other. _Strong_ eventual consistency means nodes are _guaranteed_ to reach consistency without conflicts, which is possible for any system whose [state change](#state-change) functions adhere to the [CALM theorem](#consistency-as-logical-monotonicity-calm-theorem).
+Describes a promise made by distributed systems that optimize for availability over consistency (see [CAP theorem](#consistency-availability-partition-tolerance-cap-theorem)), meaning that given enough time, every [node](#node) ought to eventually reach [consistency](#consistency) with each other. _Strong_ eventual consistency means nodes are _guaranteed_ to reach consistency without conflicts, which is possible for any system whose [state transition](#state-transition) functions adhere to the [CALM theorem](#consistency-as-logical-monotonicity-calm-theorem).
 
 #### Front end
 
@@ -250,7 +248,7 @@ An [append-only](#append-only) data structure that can be used as a tamper-evide
 
 #### History
 
-The events taken by an [agent](#agent), recorded in their [source chain](#source-chain)
+The entries committed by an [agent](#agent), recorded in their [source chain](#source-chain).
 
 #### Holo
 
@@ -264,7 +262,7 @@ Holochain's standard software development kit (SDK) for [zome](#zome) and [DNA](
 
 #### Holochain application (hApp)
 
-A collection of [DNAs](#dna) and a [client](#client) (or clients) that allow users to interact with those DNAs.
+A collection of [DNAs](#dna) and a [client](#client) (or clients) that allow users to interact with those DNAs. Typically distributed as a [hApp bundle](#happ-bundle)
 
 #### Holochain Core
 
@@ -296,7 +294,7 @@ Synonymous with [ledger](#ledger).
 
 #### Ledger
 
-A history of events or [state changes](#state-change). In [distributed ledger technology](#distributed-ledger-technology-dlt), ledgers are usually stored as [hash chains](#hash-chain), such as a Holochain agent's [source chain](#source-chain).
+A history of events or [state transitions](#state-transition). In [distributed ledger technology](#distributed-ledger-technology-dlt), ledgers are usually stored as [hash chains](#hash-chain), such as a Holochain agent's [source chain](#source-chain).
 
 #### Link
 
@@ -308,11 +306,11 @@ Describes a set of facts in which the truth of prior facts are never negated by 
 
 #### Membrane
 
-Any permeable boundary that allows appropriate access and disallows inappropriate access.
+A permeable boundary in a Holochain app that allows appropriate access and disallows inappropriate access, specifically:
 
-The layer of protection around an [agent](#agent)'s [DNA instance](#dna-instance) (provided by [capability-based security](#capability-based-security)) that prevents unauthorized access to the instance or its source chain data.
+1. The layer of protection around an [agent](#agent)'s [DNA instance](#dna-instance) (provided by [capability-based security](#capability-based-security)) that prevents unauthorized access to the instance or its source chain data.
 
-A special [validation rule](#validation-rule) for the [agent ID](#agent-id) entry that governs the [agent](#agent)'s ability to become part of the [DHT](#distributed-hash-table-dht).
+2. A special [validation rule](#validation-rule) for the [agent ID](#agent-id) entry that governs the [agent](#agent)'s ability to become part of the [DHT](#distributed-hash-table-dht).
 
 #### Metadata
 
@@ -414,9 +412,7 @@ A network port that the [conductor](#conductor) exposes, allowing [clients](#cli
 
 #### Resilience
 
-1. The level of a [network](#network)'s capacity to hold itself in integrity as [nodes](#node) leave and join the network and dishonest nodes try to corrupt it.
-
-2. The level of redundancy of a [DHT entry](#dht-entry), expected to correspond to the [resilience factor](#resilience-factor) of the [DNA](#dna). That is, for a resilience factor of 5, each entry is expected to exist on five nodes with 100% uptime or ten nodes with 50% uptime.
+The level of a [network](#network)'s capacity to hold itself and its data in integrity as [nodes](#node) leave and join the network and dishonest nodes try to corrupt it.
 
 #### Resilience factor
 
@@ -429,6 +425,10 @@ The 'sandbox' or 'virtual machine' inside which a [DNA instance](#dna-instance) 
 #### Rust
 
 The programming language used to build both Holochain and [DNAs](#dna).
+
+#### Saturation
+
+The state at which the peers holding a [DHT entry](#dht-entry) have satisfied the [DNA](#dna)'s expected [resilience factor](#resilience-factor).
 
 #### Scenario test
 
@@ -444,7 +444,7 @@ A message emitted by a DNA, meant to be received and responded to a [client](#cl
 
 #### Source chain
 
-A [hash chain](#hash-chain) of actions taken by an [agent](#agent). For each [DHT](#distributed-hash-table-dht), every agent stores their own source chain as a record of [state changes](#state-change) they've made---that is, [entries](#entry) they've committed.
+A [hash chain](#hash-chain) of actions taken by an [agent](#agent). For each [DHT](#distributed-hash-table-dht), every agent stores their own source chain as a record of [state transitions](#state-transition) they've made---that is, [entries](#entry) they've committed.
 
 #### Source chain entry
 
@@ -454,9 +454,9 @@ An individual record stored on a [source chain](#source-chain). It may be a [pri
 
 A meta-entry that links a [source chain entry](#source-chain-entry) to the previous entry in an [agent](#agent)'s [source chain](#source-chain).
 
-#### State change
+#### State transition
 
-A modification of application state. In Holochain, state changes begin life in an [agent](#agent)'s [source chain](#source-chain) as [entries](#entry) and are optionally [published](#publish) to the [DHT](#distributed-hash-table-dht) as a permanent public record.
+A modification of application state. In Holochain, state transitions begin life in an [agent](#agent)'s [source chain](#source-chain) as [entries](#entry) and are optionally [published](#publish) to the [DHT](#distributed-hash-table-dht) as a permanent public record.
 
 #### Subconscious
 
@@ -464,7 +464,7 @@ The 'base' [validation rules](#validation-rule) defined by the Holochain [nucleu
 
 #### Trustless
 
-Describes a [peer-to-peer](#peer-to-peer) [distributed system](#distributed-system) which is [Byzantine fault tolerant](#byzantine-fault-tolerance) even when [nodes](#node) are anonymous and membership is unrestricted. Trust is placed in the quality of the algorithm and the game theory that underpins it, rather than in the .
+Describes a [peer-to-peer](#peer-to-peer) [distributed system](#distributed-system) which is [Byzantine fault tolerant](#byzantine-fault-tolerance) even when [nodes](#node) are anonymous and membership is unrestricted. Trust is placed in the algorithm, rather than in the reputation of the actors.
 
 #### Validating DHT
 
