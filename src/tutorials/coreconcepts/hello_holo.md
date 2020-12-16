@@ -19,7 +19,7 @@ This tutorial helps you get orientated to the basics of a hApp. These are the fu
 
 ## Setup
 
-1. Complete the [installation guide](https://developer.holochain.org/start.html). It will give you an app development, environment including the Holochain developer tool `hc`.
+1. Complete the [installation guide](https://redux.developer.holochain.org/start.html). It will give you an app development, environment including the Holochain developer tool `hc`.
 2. Open up a terminal (if you're using Windows 10, make sure you open the Ubuntu terminal, not the command prompt or Powershell).
 3. Enter the development environment. You'll remember this command from the installation tutorial:
 ```bash
@@ -77,7 +77,7 @@ Give it a go by asking `hc` to package your app:
 
 ## Generate a zome
 
-Your app doesn't really do much right now because it needs a [zome](https://developer.holochain.org/guide/latest/zome/welcome.html). A zome is Holochain's way of organizing code into nice units that perform a certain task (like saying, "Hello").
+Your app doesn't really do much right now because it needs a [zome](https://redux.developer.holochain.org/guide/latest/zome/welcome.html). A zome is Holochain's way of organizing code into nice units that perform a certain task (like saying, "Hello").
 
 Generate a zome called `hello` inside the zome's folder:
 

@@ -111,7 +111,7 @@ Download it into the root of your GUI directory and unzip it:
 
 ```bash
 cd gui
-curl https://developer.holochain.org/assets/files/hc-web-client-0.5.3.zip > hc-web-client-0.5.3.zip
+curl https://redux.developer.holochain.org/assets/files/hc-web-client-0.5.3.zip > hc-web-client-0.5.3.zip
 unzip hc-web-client-0.5.3.zip
 rm hc-web-client-0.5.3.zip
 ```
