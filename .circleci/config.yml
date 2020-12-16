@@ -10,13 +10,13 @@ jobs:
           key: -V2-cc_tuts
       - run:
           name: Get single_source 
-          command: nix-shell https://holochain.love --run 'cargo install single_source' 
+          command: nix-shell https://github.com/holochain/holonix/archive/release-0.0.85.tar.gz --run 'cargo install single_source' 
       - run:
           name: Pass through
           command: ./create_docs.sh
       - run:
           name: Run all tests
-          command: nix-shell https://holochain.love --run './run_all_tests.sh' 
+          command: nix-shell https://github.com/holochain/holonix/archive/release-0.0.85.tar.gz --run './run_all_tests.sh' 
       - save_cache:
           key: -V2-cc_tuts
           paths:
@@ -110,13 +110,13 @@ workflows:
             branches:
               only: 
                 - develop
-                - master
+                - main
       - test_install:
           filters:
             branches:
               only: 
                 - develop
-                - master
+                - main
       - test_release:
           filters:
             branches:

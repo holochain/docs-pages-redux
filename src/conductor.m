@@ -10,7 +10,7 @@ Before you can create the config file, you will need to generate keys for your a
 
 Use `hc keygen` in your nix-shell to generate a key for each agent:
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```
     hc keygen -n -p alice.key
     ```
@@ -31,7 +31,7 @@ Take note of the `Public address`---you will need it later.
 
 Now, run `hc keygen` again, but copy the key store to bob.key:
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```
     hc keygen -n -p bob.key
     ```
@@ -62,7 +62,7 @@ test_agent = true
 ```
 Next, you need your DNA's hash:
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```
     hc hash 
     ```

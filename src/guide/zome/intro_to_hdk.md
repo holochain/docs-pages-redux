@@ -18,7 +18,7 @@ There is an in-depth article on [writing an HDK](../writing_development_kit.md) 
 
 The HDK with priority development and support is implemented in Rust, and is included right in the [core repository](https://github.com/holochain/holochain-rust) along with the Holochain core framework. Other HDKs may be implemented in different languages, and exist in separate repositories. This HDK implements all of the above features for developers, so just know that as you develop your Zome, a lot is going on behind the scenes in the HDK to make it all work.
 
-The Rust HDK has documentation for each released version, available at [developer.holochain.org/api](https://developer.holochain.org/api/). This documentation will be invaluable during your use of the HDK, because it can show you how the definitions of the various custom Holochain types, and give examples and details on the use of the API functions exposed to the Zomes.
+The Rust HDK has documentation for each released version, available at [developer.holochain.org/api](https://redux.developer.holochain.org/api/). This documentation will be invaluable during your use of the HDK, because it can show you how the definitions of the various custom Holochain types, and give examples and details on the use of the API functions exposed to the Zomes.
 
 Notice that in the `Cargo.toml` file of a new Zome, the HDK is included. For example,
 

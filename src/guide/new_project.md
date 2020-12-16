@@ -10,10 +10,10 @@ Come up with a name for your application, or at least for your project folder.
 
 Copy or type the command below into your terminal, except replace `your_app_name` with the name you came up with. Press `Enter` to execute the command.
 
-Again, make sure you have followed the [quick start guide](https://developer.holochain.org/start.html).
+Again, make sure you have followed the [quick start guide](https://redux.developer.holochain.org/start.html).
 
 ```shell
-$ nix-shell https://holochain.love
+$ nix-shell https://github.com/holochain/holonix/archive/release-0.0.85.tar.gz
 # snip
 [nix-shell:~]$ hc init your_app_name
 Created new Holochain project at: "your_app_name"

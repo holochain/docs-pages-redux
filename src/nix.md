@@ -13,7 +13,16 @@ The main components of the tooling for Holochain development are:
 
 It is important that these remain consistent across compatible apps and the Holochain Core, so you can get your work done without fighting package and compiler issues.
 
-The Holonix repository tracks standard, shared dependencies for all of the scenarios in which we use NixOS. Typically you won’t need to interact with Holonix directly; all you need to do is [install Nix](https://nixos.org/nix/download.html) and start Holonix using the quick install command `nix-shell https://holochain.love`.
+The Holonix repository tracks standard, shared dependencies for all of the scenarios in which we use NixOS. Typically you won’t need to interact with Holonix directly; all you need to do is [install Nix](https://nixos.org/nix/download.html) and start Holonix using the install command
+
+```bash
+nix-shell https://github.com/holochain/holonix/archive/release-0.0.85.tar.gz
+```
+
+!!! note "What happened to holochain.love?"
+    If you've been following Holochain development for a while, you might be wondering what happened to the quick install command that used the much shorter `https://holochain.love` to download the Holonix package.
+
+    This still exists, but at present we're updating all of our dev tools (including the Holonix package at `holochain.love`) to use the [new version of Holochain](https://redux.developer.holochain.org/holochain-rsm-guidance.html). So we recommend using the GitHub release URL for the last version of Holonix to include the old Holochain-Redux., which is 0.0.85.
 
 The main Nix tool used in Holochain development workflows is `nix-shell`, a managed Bash shell that overlays a new environment and set of tools on top of your existing environment.
 
@@ -37,25 +46,7 @@ nix-shell <path_or_url_to_nix_config_file>
 
 will configure the environment and enter the newly created shell for you. On the initial run, and any time a component has been updated, it will take some time to download and build. It gets much faster on subsequent runs.
 
-### The 'blessed' release---always up-to-date with stable tools
-
-Holochain development is moving fast, so we regularly make breaking changes, introduce testing and debugging plumbing, and discover bugs. If you want a reasonably stable environment, stick with the blessed releases. They've gone through automated and manual testing and are considered ready for day-to-day use (though with a level of stability that you can expect from an alpha release).
-
-The website [https://holochain.love](https://holochain.love) always has the newest blessed `default.nix` file from the Holonix project, so all you need to do to install or update is enter your terminal and run:
-
-```bash
-nix-shell https://holochain.love
-```
-
-If we announce a new release and you would like to use it, remember to exit your nix-shell and re-enter it.
-
-### Unblessed releases
-
-If you need certain functionality sooner or just want to track the bleeding edge, you can use the `default.nix` file directly from the [Holonix repository](https://github.com/holochain/holonix). The `master` branch always contains the newest release of Holochain, whether blessed or unblessed. Here's how to use an unblessed release:
-
-```bash
-nix-shell https://github.com/holochain/holonix/archive/master.zip
-```
+### Specific versions
 
 If you want to install a specific version of Holochain or the developer tools, it's a bit more tricky because Holonix version numbers don't exactly correspond to the version numbers of the Holochain release they contain. You'll need to find the specific Holonix version number (the [Dev Pulse blog](https://blog.holochain.org/tag/dev-pulse/) is a good source for this) and enter this command:
 

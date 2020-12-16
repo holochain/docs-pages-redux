@@ -69,7 +69,7 @@ Tell the test to wait for the DHT to become consistent.
 ```
 
 !!! warning "Shouldn't I use `s.consistency()`?"
-    If this isn't the first time you've written a Tryorama scenario, you may remember the statement `await s.consistency()` which waited for the DHT to become consistent. We're not using this because, in the course of fixing another bug, the `s.consistency()` function was broken. We made the decision to not fix it now, but instead introduce better tools for consistency checking later. We're currently working on [a new Holochain](/holochain-rsm-guidance.html) and will not be backporting this fix to the soon-to-be-deprecated version that you're currently learning with.
+    If this isn't the first time you've written a Tryorama scenario, you may remember the statement `await s.consistency()` which waited for the DHT to become consistent. We're not using this because, in the course of fixing another bug, the `s.consistency()` function was broken. We made the decision to not fix it now, but instead introduce better tools for consistency checking later. We're currently working on [a new Holochain](https://redux.developer.holochain.org/holochain-rsm-guidance.html) and will not be backporting this fix to the soon-to-be-deprecated version that you're currently learning with.
 
 Add a call to the `retrieve_person` function with the address from the last call:
 
@@ -102,7 +102,7 @@ orchestrator.run();
 ### Run sim2h
 Again, you will need to run the sim2h server in a separate terminal window:
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```bash
     sim2h_server
     ```
@@ -117,12 +117,12 @@ Obviously, right now, these tests will fail. Can you guess what the first failur
 Enter the nix-shell if you don't already have it open:
 
 ```bash
-nix-shell https://holochain.love
+nix-shell https://github.com/holochain/holonix/archive/release-0.0.85.tar.gz
 ```
 
 Run the test:
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```bash
     hc test
     ```
@@ -306,7 +306,7 @@ Return the `Ok` result with the new person entry's address:
 
 Check for compile errors again:
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```bash
     hc package
     ```
@@ -349,7 +349,7 @@ Get the entry from your local storage, asking for it by address, and convert it 
 
 Instead of directly compiling, you can run the test you wrote at the start (the test always compiles before it runs):
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```bash
     hc test
     ```
@@ -465,7 +465,7 @@ Let's test your first call.
 
 Open a new terminal window and enter the nix-shell:
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```bash
     hc package
     ```

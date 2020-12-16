@@ -15,7 +15,7 @@ Holochain DNA files are written in a data format known as JSON. It stores sets o
 
 JSON is usually used for configuration and static data, but in the case of Holochain, these DNA files also contain compiled code, which is executable by Holochain.
 
-As previously mentioned, you do not need to edit this "master" DNA file directly. Holochain command line tools can be used to build it from your raw files.
+As previously mentioned, you do not need to edit this "main" DNA file directly. Holochain command line tools can be used to build it from your raw files.
 
 [Learn more about the package command which fulfills this function](https://github.com/holochain/holochain-rust/tree/develop/cli#usage)
 
