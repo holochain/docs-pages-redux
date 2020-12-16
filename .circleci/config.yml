@@ -110,13 +110,13 @@ workflows:
             branches:
               only: 
                 - develop
-                - master
+                - main
       - test_install:
           filters:
             branches:
               only: 
                 - develop
-                - master
+                - main
       - test_release:
           filters:
             branches:
