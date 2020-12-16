@@ -248,7 +248,7 @@ instance_id = "__cc_tuts"
 Make sure you are in you hApp's directory `cc_tuts/` and not the GUI directory.
 Enter the nix-shell if you haven't already and package / run the hApp.
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     Package the app:
     ```bash
     hc package
@@ -347,7 +347,7 @@ Finally, update the `hello` function to call your new `show_output` function ins
 Make sure you are in you hApp's directory `cc_tuts/` and not the GUI directory.
 Enter the nix-shell if you haven't already and package / run the hApp.
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     Package the app:
     ```bash
     hc package

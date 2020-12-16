@@ -134,7 +134,7 @@ Now that you have installed Nix, you can run a development shell that contains a
 
 \#S:MODE=enter
 ```bash
-nix-shell https://holochain.love
+nix-shell https://github.com/holochain/holonix/archive/release-0.0.85.tar.gz
 ```
 
 The first time you run this command it will take some time to download and build, but it will be much faster the next time.
@@ -147,7 +147,7 @@ The first time you run this command it will take some time to download and build
 Test that Holochain is working by running:
 
 \#S:MODE=nix
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```bash
     hc --version
     holochain --version
@@ -161,7 +161,7 @@ Test that Holochain is working by running:
 
 ### Update/Uninstall
 
-You don’t need to worry about updating or uninstalling. When you enter the nix-shell, it checks for the latest blessed release, downloads any updates, and then cleans up the configuration when you exit.
+The version of Holochain contained in Holonix v0.0.85 is Holochain-Redux v0.0.52-alpha2. This is the end-of-life version for Holochain-Redux, which has been replaced by the [new version of Holochain](https://redux.developer.holochain.org/holochain-rsm-guidance.html).
 
 ### Using your text editor or IDE
 
@@ -169,7 +169,7 @@ In most cases you can run your editor as normal. However, if you are using a tex
 
 To do this, just open your editor from the command line while you are in the nix-shell (this example uses Vim):
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```
     vim my_file.rs
     ```

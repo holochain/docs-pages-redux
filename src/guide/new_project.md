@@ -13,7 +13,7 @@ Copy or type the command below into your terminal, except replace `your_app_name
 Again, make sure you have followed the [quick start guide](https://redux.developer.holochain.org/start.html).
 
 ```shell
-$ nix-shell https://holochain.love
+$ nix-shell https://github.com/holochain/holonix/archive/release-0.0.85.tar.gz
 # snip
 [nix-shell:~]$ hc init your_app_name
 Created new Holochain project at: "your_app_name"
