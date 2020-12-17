@@ -161,7 +161,9 @@ Test that Holochain is working by running:
 
 ### Update/Uninstall
 
-The version of Holochain contained in Holonix v0.0.85 is Holochain-Redux v0.0.52-alpha2. This is the end-of-life version for Holochain-Redux, which has been replaced by the [new version of Holochain](https://redux.developer.holochain.org/holochain-rsm-guidance.html).
+The version of Holochain contained in Holonix v0.0.85 is Holochain-Redux v0.0.52-alpha2. This is the end-of-life version for Holochain-Redux, which means there will be no more updates for this codebase. Holochain-Redux has been replaced by the [new version of Holochain](https://redux.developer.holochain.org/holochain-rsm-guidance.html), which we encourage you to start developing on right away.
+
+Because nix-shell doesn't modify your usual environment in any way, there's no need to uninstall it. But if you want to clear up disk space, you can delete the entire contents of the `/nix/store` directory --- just make sure nobody or nothing else uses Nix on your computer!
 
 ### Using your text editor or IDE
 
