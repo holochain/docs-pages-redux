@@ -1,0 +1,39 @@
+[build]
+    publish = "/build"
+    command = "./install_rust.sh && ./create_docs.sh && ./build_all_tuts.sh && mkdocs build -d build/docs"
+
+[[redirects]]
+    from = "/guide/*"
+    to = "/docs/guide/welcome"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/docs/api/"
+    to = "https://docs.rs/hdk"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/api/index.html"
+    to = "https://docs.rs/hdk"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/api/latest/hdk/"
+    to = "https://docs.rs/hdk"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/start"
+    to = "/docs/install/"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/start.html"
+    to = "/docs/install/"
+    status = 301
+    force = true
