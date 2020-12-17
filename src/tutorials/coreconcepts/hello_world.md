@@ -63,10 +63,10 @@ Before Bob can retrieve Alice's person, Bob will need to be able to see the pers
 
 To make sure this has happened, add this line to the end of the scenario:
 ```javascript
-  await s.consistency();
+  await new Promise(r => setTimeout(r, 1000));
 ```
 
-> This one line says a lot about the nature of a Holochain application. The word `await` shows that we are in an asynchronous world and want to wait for consistency to be achieved. What kind of situation might lead to this line never returning? _Hint: Think about networks that might not be perfect._
+> This one line says a lot about the nature of a Holochain application. The word `await` shows that we are in an asynchronous world, so we want to wait for consistency to be achieved. What kind of situation might lead to this line not being sufficient? _Hint: Think about networks that might not be perfect._
 
 Get Bob to retrieve Alice's person using the same address she did when she created the entry:
 
@@ -103,7 +103,7 @@ Your test should look like this:
 ### Run sim2h
 Again, you will need to run the sim2h server in a seperate terminal window:
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```bash
     sim2h_server
     ```
@@ -113,12 +113,12 @@ Again, you will need to run the sim2h server in a seperate terminal window:
 Enter the nix-shell if you don't have it open already:
 
 ```bash
-nix-shell https://holochain.love
+nix-shell https://github.com/holochain/holonix/archive/release-0.0.85.tar.gz
 ```
 
 Now, run the test and make sure it passes:
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```bash
     hc test
     ```
@@ -144,7 +144,7 @@ You will also need to give each conductor a different agent name.
 
 Now that you've changed your DNA (even though it's a tiny change), it has a new hash. You'll need to update your `bundle.toml` file.
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```
     hc hash
     ```
@@ -154,7 +154,7 @@ Now that you've changed your DNA (even though it's a tiny change), it has a new 
 #### Terminal one
 You should have the sim2h server already running after the test. If not, start it now.
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```
     sim2h_server
     ```
@@ -163,7 +163,7 @@ You should have the sim2h server already running after the test. If not, start i
 
 Now it's time to start a conductor for Alice.
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```
     hc run --networked sim2h --agent-name Alice --port 8888
     ```
@@ -172,7 +172,7 @@ Now it's time to start a conductor for Alice.
 
 Start a second coductor for Bob on a different port:
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```
     hc run --networked sim2h --agent-name Bob --port 8889
     ```

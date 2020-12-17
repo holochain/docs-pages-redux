@@ -19,15 +19,15 @@ This tutorial helps you get orientated to the basics of a hApp. These are the fu
 
 ## Setup
 
-1. Complete the [installation guide](https://developer.holochain.org/start.html). It will give you an app development, environment including the Holochain developer tool `hc`.
+1. Complete the [installation guide](https://redux.developer.holochain.org/start.html). It will give you an app development, environment including the Holochain developer tool `hc`.
 2. Open up a terminal (if you're using Windows 10, make sure you open the Ubuntu terminal, not the command prompt or Powershell).
 3. Enter the development environment. You'll remember this command from the installation tutorial:
 ```bash
-nix-shell https://holochain.love
+nix-shell https://github.com/holochain/holonix/archive/release-0.0.85.tar.gz
 ```
 
 !!! tip "Nix Shell"
-    You will see commands marked `Run in nix-shell https://holochain.love` throughout these tutorials.
+    You will see commands marked "Run in nix-shell" throughout these tutorials.
     You should keep the nix-shell open and run these commands in it---don't reopen nix-shell for every command unless the tutorial tells you to.
 
 ## Initializing your new app
@@ -46,7 +46,7 @@ It's time to put the Holochain command line tool (`hc`) to work and make your ap
 
 Initialize a new app and enter the app directory:
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```bash
     hc init cc_tuts
     cd cc_tuts
@@ -61,7 +61,7 @@ It's always good to frequently compile your app to catch any mistakes early on.
 
 Give it a go by asking `hc` to package your app:
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```bash
     hc package
     ```
@@ -77,18 +77,18 @@ Give it a go by asking `hc` to package your app:
 
 ## Generate a zome
 
-Your app doesn't really do much right now because it needs a [zome](https://developer.holochain.org/guide/latest/zome/welcome.html). A zome is Holochain's way of organizing code into nice units that perform a certain task (like saying, "Hello").
+Your app doesn't really do much right now because it needs a [zome](https://redux.developer.holochain.org/guide/latest/zome/welcome.html). A zome is Holochain's way of organizing code into nice units that perform a certain task (like saying, "Hello").
 
 Generate a zome called `hello` inside the zome's folder:
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```bash
     hc generate zomes/hello rust-proc
     ```
 
 #### Compile
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```bash
     hc package
     ```
@@ -104,7 +104,7 @@ Generate a zome called `hello` inside the zome's folder:
     > cargo build --release --target=wasm32-unknown-unknown --target-dir=target
         Finished release [optimized] target(s) in 0.50s
     Created DNA package file at "/Users/username/holochain/coreconcepts/hello_hollo/dist/hello_hollo.dna.json"
-    DNA hash: QmTVcDkmNsoGDDbpx81zFr1RBKxMLWRBA7eNiiMtvxJJSF
+    DNA hash: QmfR7roRdUZASznWyW6bN7Rs8VKWXMcts4S14f2rCaqQGB
     ```
 
 ## Folder layout
@@ -261,7 +261,7 @@ Return an `Ok` result that contains our greeting. `into()` is a bit of Rust oddn
 
 > If you find errors, remember to fix them before moving on. You can always get help on the Holochain[forum](https://forum.holochain.org/t/about-the-getting-started-category/167).
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```bash
     hc package
     ```
@@ -271,7 +271,7 @@ Return an `Ok` result that contains our greeting. `into()` is a bit of Rust oddn
 To interact with your application, you can run it in HTTP mode.
 
 Run your app in HTTP mode:
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```bash
     hc run -i http
     ```
@@ -279,12 +279,12 @@ Run your app in HTTP mode:
 You can send a [POST](https://en.wikipedia.org/wiki/POST_(HTTP)) message to your app using [curl](https://curl.haxx.se/), a little command for making HTTP requests. It's included in the Holochain dev environment, so if you don't have it installed in your machine, you can open a new terminal window and enter the nix-shell again:
 
 ```bash
-nix-shell https://holochain.love
+nix-shell https://github.com/holochain/holonix/archive/release-0.0.85.tar.gz
 ```
 
 Enter the following request, which calls the `hello_holo` function and returns the result:
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```bash
     curl -X POST -H "Content-Type: application/json" -d '{"id": "0", "jsonrpc": "2.0", "method": "call", "params": {"instance_id": "test-instance", "zome": "hello", "function": "hello_holo", "args": {} }}' http://127.0.0.1:8888
     ```

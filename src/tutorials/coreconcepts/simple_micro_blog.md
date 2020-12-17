@@ -411,7 +411,7 @@ This is the same setup as in the previous tutorial.
 #### Terminal one
 Run the sim2h server
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```
     sim2h_server
     ```
@@ -419,7 +419,7 @@ Run the sim2h server
 #### Terminal two
 Package the DNA and then update the hash:
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```
     hc package
     ```
@@ -430,7 +430,7 @@ Package the DNA and then update the hash:
     hc run
     ```
 Run Alice's conductor:
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```
     hc run --networked sim2h --agent-name Alice --port 8888
     ```
@@ -438,7 +438,7 @@ Run Alice's conductor:
 #### Terminal three
 There's no need to recompile or update the DNA hash in the bundle file for Bob.
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```
     hc run --networked sim2h --agent-name Bob --port 8889
     ```

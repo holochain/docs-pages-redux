@@ -156,7 +156,7 @@ Remove the following section:
 -  );
 -
 -  // Wait for all network activity to settle
--  await s.consistency();
+-  await new Promise(r => setTimeout(r, 1000));
 -
 -  const result = await bob.call('myInstanceName', 'my_zome', 'get_my_entry', {
 -    address: addr.Ok,
@@ -219,7 +219,7 @@ This is the switchboard that does the routing, and will eventually be unneccassa
 To run the server, open up a new nix-shell in a different terminal and run this command:
 
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```bash
     sim2h_server
     ```
@@ -230,7 +230,7 @@ To run the server, open up a new nix-shell in a different terminal and run this 
 
 Now, in the `cc_tuts` directory, run the test like this:
 
-!!! note "Run in `nix-shell https://holochain.love`"
+!!! note "Run in nix-shell"
     ```bash
     $ hc test
     ```

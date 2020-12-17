@@ -12,9 +12,9 @@ In this article we will walk through the steps of creating a simple hApp using R
 
 ## Requirements
 
-First step is to download the appropriate [dev preview release](https://github.com/holochain/holochain-rust/releases) for your OS. If you decide to build the latest version from source, be warned that the API is undergoing rapid change, so some of the steps in this article may not work. The release contains the binary for the holochain developer command line tool, `hc`, which is used to generate a skeleton app, run tests and build the app package. Follow the installations on [this page](https://developer.holochain.org/start.html) to install the required dependencies.
+First step is to download the appropriate [dev preview release](https://github.com/holochain/holochain-rust/releases) for your OS. If you decide to build the latest version from source, be warned that the API is undergoing rapid change, so some of the steps in this article may not work. The release contains the binary for the holochain developer command line tool, `hc`, which is used to generate a skeleton app, run tests and build the app package. Follow the installations on [this page](https://redux.developer.holochain.org/start.html) to install the required dependencies.
 
-Ensure that `hc` is available on your path. If you instead decide to [build from source](https://developer.holochain.org/start.html) cargo will ensure the binaries are on your path automatically.
+Ensure that `hc` is available on your path. If you instead decide to [build from source](https://redux.developer.holochain.org/start.html) cargo will ensure the binaries are on your path automatically.
 
 If you want to jump ahead to see what the completed project will look like, the [full source code is available on GitHub](https://github.com/willemolding/holochain-rust-todo).
 
