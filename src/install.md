@@ -1,7 +1,7 @@
 # Install The Holochain Developer Tools
 
 <div markdown="1" class="coreconcepts-intro">
-This guide will get you set up with the latest 'blessed' Holochain developer environment on macOS, Linux, and Windows. Blessed releases are reasonably stable for daily hApp development, while in-between releases may have bugs or are meant for internal use. If you'd like to install an in-between release, read our [advanced guide](../nix/#unblessed-releases).
+This guide will get you set up with the last official Holochain-Redux developer environment on macOS, Linux, and Windows. Holochain-Redux is at its end of life, and there will be **no more updates**. Instead of installing Holochain-Redux, we encourage you to start developing on the [new version of Holochain](https://redux.developer.holochain.org/holochain-rsm-guidance.html) right away.
 </div>
 
 ## Hardware Requirements
@@ -162,6 +162,8 @@ Test that Holochain is working by running:
 ### Update/Uninstall
 
 The version of Holochain contained in Holonix v0.0.85 is Holochain-Redux v0.0.52-alpha2. This is the end-of-life version for Holochain-Redux, which means there will be no more updates for this codebase. Holochain-Redux has been replaced by the [new version of Holochain](https://redux.developer.holochain.org/holochain-rsm-guidance.html), which we encourage you to start developing on right away.
+
+If you'd like to install an older release, read our [advanced guide](../nix/)
 
 Because nix-shell doesn't modify your usual environment in any way, there's no need to uninstall it. But if you want to clear up disk space, you can delete the entire contents of the `/nix/store` directory --- just make sure nobody or nothing else uses Nix on your computer!
 
